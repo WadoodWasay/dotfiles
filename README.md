@@ -2,4 +2,4 @@
 testing
 In this repo, there are the dotfiles for my ASUS Arch linux laptop, as well as my Gentoo Desktop PC. 
 
-testing once again
+Both the Arch and the Gentoo sub-folders have README files discussing keybinds, config choices, as well as features
