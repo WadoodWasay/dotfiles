@@ -1,5 +1,4 @@
 # Overview README file for this repository
-testing
-In this repo, there are the dotfiles for my ASUS Arch linux laptop, as well as my Gentoo Desktop PC. 
+I now run Arch Linux on both my desktop PC and my laptop
 
-Both the Arch and the Gentoo sub-folders have README files discussing keybinds, config choices, as well as features
+Also my laptop broke, so no updates to the dotfiles for that for a bit until it gets fixed. I also use just KDE on my desktop right now, so this repo has basically no use for now. 
