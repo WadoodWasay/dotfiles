@@ -37,9 +37,7 @@ cp -r nvim ~/.config/nvim
 ```
 
 
-# Changelog
-## this probably isn't going to get used much
-
-### 9-18
+## Changelog
+9-18
 started ricing waybar, just configuration right now (ArchROG)
 
