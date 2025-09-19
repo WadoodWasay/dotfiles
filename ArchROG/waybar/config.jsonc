@@ -2,35 +2,23 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 10, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
-        "custom/media"
+       "group/hardware",
+       "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+       "power-profiles-daemon",
+       "hyprland/workspaces",
+       "idle_inhibitor"
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
         "clock",
-        "tray",
         "custom/power"
     ],
     // Modules configuration
@@ -50,25 +38,6 @@
     //         "default": ""
     //     }
     // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -150,9 +119,6 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -179,7 +145,7 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -205,15 +171,27 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
-    }
+        "format" : " ⏻ ",
+	"on-click": "wlogout"
+    },
+
+    "group/hardware": {
+       "oreintation": "horizontal",
+       "drawer": {
+	  "transition-duration": 500,
+	  "transition-left-to-right": true
+       },
+       "modules": [
+	  "custom/hardware-wrap",
+	  "cpu",
+	  "temperature",
+	  "memory",
+	  "battery"
+       ]
+    },
+
+    "custom/hardware-wrap": {
+	"format": "",
+	"tooltip-format": "Hardware group"
+   } 
 }
