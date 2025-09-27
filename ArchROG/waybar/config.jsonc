@@ -16,10 +16,10 @@
        "idle_inhibitor"
     ],
     "modules-right": [
-        "pulseaudio",
-        "network",
-        "clock",
-        "custom/power"
+       "group/audio",
+       "group/connections",
+       "clock",
+       "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -38,32 +38,6 @@
     //         "default": ""
     //     }
     // },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -73,7 +47,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10,
+        "spacing": 10
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -171,12 +145,12 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : " ⏻ ",
+        "format" : "⏻",
 	"on-click": "wlogout"
     },
 
     "group/hardware": {
-       "oreintation": "horizontal",
+       "orientation": "horizontal",
        "drawer": {
 	  "transition-duration": 500,
 	  "transition-left-to-right": true
@@ -191,7 +165,55 @@
     },
 
     "custom/hardware-wrap": {
-	"format": "",
+	"format": "",
+	"on-click": "kitty -e btop",
 	"tooltip-format": "Hardware group"
-   } 
+   }, 
+
+   "custom/bluetooth": {
+      "format" : "",
+      "on-click": "blueman-manager"
+   },
+
+   "group/audio": {
+      "orientation": "horizontal",
+      "drawer": {
+	 "transition-duration": 250,
+	 "transition-left-to-right": false
+      },
+      "modules": [
+	 "custom/audio-wrap",
+	 "custom/easy-effects",
+	 "pulseaudio"
+      ]
+   },
+
+   "custom/audio-wrap": {
+      "format": ""
+   },
+
+   "custom/easy-effects": {
+      "format": "",
+      "tooltip-format": "Easy Effects",
+      "on-click": "flatpak run com.github.wwmm.easyeffects"
+   },
+
+   "custom/connections-wrap": {
+      "format": "",
+      "tooltip-format": "Connections"
+   },
+
+   "group/connections": {
+      "orientation": "horizontal",
+      "drawer": {
+	 "transition-duration": 250, 
+	 "transition-left-to-right": false
+      },
+      "modules": [
+	 "custom/connections-wrap",
+	 "custom/bluetooth",
+	 "network"
+      ]
+   }
+
 }
