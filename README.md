@@ -1,7 +1,5 @@
 # Overview README file for this repository
-I run Arch Linux on my ASUS ROG Laptop, and my Desktop. The GentooROG and ArchThinkpad repos aren't getting any updates anytime soon. 
-
-I run KDE on my desktop too, so not much to do there. 
+Dotfiles for my Asus ROG laptop running Arch Linux
 
 ## How to copy this config
 clone this repo 
