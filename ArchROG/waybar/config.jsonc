@@ -172,6 +172,7 @@
 
    "custom/bluetooth": {
       "format" : "",
+      "tooltip-format" : "bluetooth",
       "on-click": "blueman-manager"
    },
 
