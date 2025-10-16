@@ -50,7 +50,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: #64727D;
 }
 
 #workspaces button {
@@ -133,7 +133,7 @@ button:hover {
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #7a7a7a;
 }
 
 @keyframes blink {
@@ -159,8 +159,8 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: #7a7a7a;
+    color: #f53c3c;
     padding-right: 3px;
     padding-left: 2px;
     margin-right: 3px;
@@ -168,8 +168,8 @@ button:hover {
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
+    background-color: #7a7a7a;
+    color: #2980b9;
     padding-right: 1px;
     padding-left: 1px;
     margin-right: 2px;
@@ -177,8 +177,8 @@ button:hover {
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: #7a7a7a;
+    color: #2ecc71;
     padding-right: 2px;
     padding-left: 2px;
     margin-right: 2px;
@@ -190,16 +190,15 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: #7a7a7a;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: #7a7a7a;
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: #7a7a7a;
 }
 
 #backlight {
@@ -207,7 +206,7 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #7a7a7a;
     padding: 2px;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -220,7 +219,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: #7a7a7a;
     color: #000000;
     padding: 2px;
     margin-top: 2px;
@@ -258,11 +257,11 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: #7a7a7a;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: #7a7a7a;
 }
 
 #tray {
@@ -411,7 +410,7 @@ label:focus {
 
 #custom-easy-effects {
    box-shadow: none;
-   background: #763819;
+   background: #7a7a7a;
       text-shadow: none;
    padding: 2px;
    margin-top: 2px;
@@ -433,4 +432,8 @@ label:focus {
    margin-left: 4px;
    padding-right: 4px;
    padding-left: 4px;
+}
+
+#hardware { 
+    border-radius: 8px;
 }
