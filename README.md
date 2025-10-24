@@ -1,41 +1,9 @@
-# Overview README file for this repository
-Dotfiles for my Asus ROG laptop running Arch Linux
+# My Dotfiles
 
-## How to copy this config
-clone this repo 
-```
-git clone https://github.com/ultwad/dotfiles
-cd dotfiles/ArchROG
-```
-
-### copy hypr configs
-```
-cp -r hypr ~/.config/hypr
-```
-this will copy all of the hyprland, hyprpaper, hyprlock, and hypridle configs (warning, this WILL overwrite your config unless you make a backup)
-
-### copy waybar configs
-if you don't have a waybar folder created in your .config directory yet (and for newcommers, yes, you have to make this folder yourself)
-```
-mkdir ~/.config/waybar
-```
-then continue:
-```
-cp -r waybar ~/.config/waybar
-```
-
-### copy nvim (neovim) config
-if you don't have a nvim folder created already:
-```
-mkdir ~/.config/nvim
-```
-then continue:
-```
-cp -r nvim ~/.config/nvim
-```
-
-
-## Changelog
-9-18
-started ricing waybar, just configuration right now (ArchROG)
-
+## Features of the Hyprland config (note this is for ASUS ROG laptops)
+    - Alt+Tab cycles to next workspace
+    - Lid closing works, and puts the computer to sleep
+    - Screenshoting in handeled with grim+slurp 
+    - Lower volume, increase volume, mute mic, power profiles, and opening the ASUS-ROG-Control center are all supported
+        - Ensure you have the g14 repository added to pacman.conf, and rog-control-center installed 
+    - Keyboard brightness and LCD brightness is controlled via brightnessctl  
