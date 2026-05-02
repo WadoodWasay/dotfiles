@@ -18,6 +18,7 @@
     "modules-right": [
        "group/audio",
        "group/connections",
+       "custom/notification",
        "clock",
        "custom/power"
     ],
@@ -106,12 +107,13 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        // "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "Disconnected ⚠"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -147,6 +149,27 @@
     "custom/power": {
         "format" : "⏻",
 	"on-click": "wlogout"
+    },
+
+    "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "swaync-client -d -sw",
+	"on-click-right": "swaync-client -t -sw",
+	"escape": true
     },
 
     "group/hardware": {
@@ -206,12 +229,14 @@
 
    "group/connections": {
       "orientation": "horizontal",
+      /*
       "drawer": {
 	 "transition-duration": 250, 
 	 "transition-left-to-right": false
       },
+      */
       "modules": [
-	 "custom/connections-wrap",
+	// "custom/connections-wrap",
 	 "custom/bluetooth",
 	 "network"
       ]
