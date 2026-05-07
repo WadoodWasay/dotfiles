@@ -105,6 +105,17 @@
         "power-saver": ""
       }
     },
+    "hyprland/workspaces": {
+	"on-click": "activate",
+	"activate-only": false,
+	"all-outputs": true,
+	"format": "{name}",
+	"format-icons": {
+	    "active": "󰮯",
+	    "urgent": "*",
+	    "default": "*"
+	},
+    }, 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
