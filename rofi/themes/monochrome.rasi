@@ -1,0 +1,211 @@
+/* monochrome.rasi — light, clean, matches your rice */
+
+* {
+    font:                        "JetBrains Mono 11";
+
+    bg0:                         #f5f5f3;
+    bg1:                         #efefed;
+    bg2:                         #e5e5e3;
+    bg3:                         #d8d8d6;
+    border-color:                #c8c8c6;
+    separator-color:             #dededc;
+
+    text-normal:                 #3a3a38;
+    text-active:                 #111110;
+    text-urgent:                 #888886;
+    text-selected:               #111110;
+    text-dim:                    #aaaaaa;
+
+    accent:                      #222220;
+    selected-bg:                 #e0e0de;
+    selected-border:             #999998;
+
+    background-color:            transparent;
+    text-color:                  @text-normal;
+}
+
+configuration {
+    modi:                        "drun,run,window,ssh";
+    show-icons:                  true;
+    icon-theme:                  "Papirus";
+    drun-display-format:         "{name}";
+    window-thumbnail:            true;
+    display-drun:                " apps";
+    display-run:                 " run";
+    display-window:              " windows";
+    display-ssh:                 "ssh";
+}
+
+window {
+    width:                       400px;
+    location:                    center;
+    anchor:                      center;
+
+    background-color:            @bg0;
+    border:                      2px;
+    border-color:                @border-color;
+    border-radius:               10px;
+    padding:                     0;
+}
+
+mainbox {
+    background-color:            transparent;
+    children:                    [ inputbar, message, mode-switcher, listview ];
+    spacing:                     0;
+}
+
+/* ── Input bar ── */
+inputbar {
+    background-color:            @bg1;
+    border-radius:               10px 10px 0 0;
+    border:                      0 0 1px 0;
+    border-color:                @separator-color;
+    padding:                     12px 14px;
+    spacing:                     10px;
+    children:                    [ prompt, textbox-prompt-colon, entry ];
+}
+
+prompt {
+    background-color:            transparent;
+    text-color:                  @text-dim;
+    vertical-align:              0.5;
+    horizontal-align:            0;
+}
+
+textbox-prompt-colon {
+    background-color:            transparent;
+    text-color:                  @text-dim;
+    expand:                      false;
+    str:                         "›";
+    vertical-align:              0.5;
+}
+
+entry {
+    background-color:            transparent;
+    text-color:                  @text-active;
+    placeholder:                 "search…";
+    placeholder-color:           @text-dim;
+    vertical-align:              0.5;
+    cursor:                      text;
+}
+
+/* ── Mode switcher ── */
+mode-switcher {
+    background-color:            @bg1;
+    border:                      0 0 1px 0;
+    border-color:                @separator-color;
+    padding:                     6px 10px;
+    spacing:                     6px;
+}
+
+button {
+    background-color:            @bg2;
+    text-color:                  @text-urgent;
+    border:                      1px;
+    border-color:                transparent;
+    padding:                     4px 12px;
+    cursor:                      pointer;
+}
+
+button selected {
+    background-color:            @bg3;
+    text-color:                  @text-active;
+    border-color:                @border-color;
+}
+
+/* ── List ── */
+listview {
+    background-color:            transparent;
+    padding:                     8px 6px;
+    spacing:                     2px;
+    lines:                       8;
+    columns:                     1;
+    scrollbar:                   true;
+    border:                      0;
+    fixed-height:                false;
+}
+
+scrollbar {
+    background-color:            @bg0;
+    handle-color:                @bg3;
+    handle-width:                3px;
+    border:                      0;
+    width:                       4px;
+}
+
+/* ── Elements ── */
+element {
+    background-color:            transparent;
+    text-color:                  @text-normal;
+    border:                      1px;
+    border-color:                transparent;
+    padding:                     7px 10px;
+    spacing:                     10px;
+    orientation:                 horizontal;
+    children:                    [ element-icon, element-text ];
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @text-normal;
+}
+
+element normal.urgent {
+    background-color:            transparent;
+    text-color:                  @text-urgent;
+}
+
+element normal.active {
+    background-color:            @bg2;
+    text-color:                  @text-active;
+}
+
+element selected.normal {
+    background-color:            @selected-bg;
+    text-color:                  @text-selected;
+    border-color:                @selected-border;
+}
+
+element selected.urgent {
+    background-color:            @bg2;
+    text-color:                  @text-urgent;
+    border-color:                @border-color;
+}
+
+element selected.active {
+    background-color:            @bg3;
+    text-color:                  @text-active;
+    border-color:                @accent;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @text-normal;
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        22px;
+    vertical-align:              0.5;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    highlight:                   bold;
+}
+
+/* ── Message box ── */
+message {
+    background-color:            @bg1;
+    border:                      0 0 1px 0;
+    border-color:                @separator-color;
+    padding:                     6px 14px;
+}
+
+textbox {
+    background-color:            transparent;
+    text-color:                  @text-urgent;
+}
